@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login - SocialApp
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>
+        Welcome Back 👋
+    </h2>
+
+    <p style="margin-top: 10px; color: #666;">
+        Login to continue to SocialApp.
+    </p>
+
+    <form
+        method="POST"
+        style="margin-top: 25px;"
+    >
+
+        {% csrf_token %}
+
+        <label>
+            Username
+        </label>
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Enter username"
+            required
+        >
+
+
+        <label>
+            Password
+        </label>
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Enter password"
+            required
+        >
+
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+
+    <p style="margin-top: 20px;">
+
+        Don't have an account?
+
+        <a href="{% url 'register' %}">
+            Create one
+        </a>
+
+    </p>
+
+</div>
+
+{% endblock %}
